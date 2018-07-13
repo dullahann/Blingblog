@@ -1,5 +1,9 @@
 package web;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -11,7 +15,7 @@ import service.userService;
 public class userServlet extends BaseServlet {
 	userService uService = new userService();
 
-	public String login(HttpServletRequest request, HttpServletResponse response) {
+	public void login(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
@@ -21,11 +25,12 @@ public class userServlet extends BaseServlet {
 		if (user != null) {
 			session.setAttribute("user", user);
 			System.out.println("登录成功！");
-
-			return "/index.jsp";
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+			//return "/index.jsp";
 		} else {
-			System.out.println("登录失败！");
-			return "/msg.jsp";
+			PrintWriter out=response.getWriter(); 
+			out.print("<script language='javascript'>alert('登录失败!!');window.location.href='sign-in.jsp';</script>");        
+			
 		}
 
 	}

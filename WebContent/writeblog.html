@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>黑色个人博客HTML5模板</title>
+<meta name="keywords" content="个人博客模板,博客模板,响应式" />
+<meta name="description" content="个人博客模板，神秘、俏皮。" />
+<link href="css/base.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/media.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
+    <script charset="utf-8" src="plugin/kindeditor/kindeditor-all-min.js"></script>
+　　 <script charset="utf-8" src="pluginkindeditor/lang/zh-CN.js"></script>
+
+
+
+
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="ibody">
+  <header>
+    <h1>如影随形</h1>
+    <h2>影子是一个会撒谎的精灵，它在虚空中流浪和等待被发现之间;在存在与不存在之间....</h2>
+    <div class="logo"><a href="index.html"></a></div>
+   <nav id="topnav"><a href="index.html">BlingBlog</a><a href="about.html">个人首页</a><a href="writeblog.html">写博客</a><a href="info.html">修改个人信息</a></nav>
+  </header>
+  <article class="arinfo">
+    <h2 class="about_h">您现在的位置是：<a href="index.html">首页</a>>写博客</h2>
+    <div class="styled-input wow slideInUp animated animated" data-wow-delay=".5s">
+  
+									  <input type="tel" required /> 
+									  <label>Title</label>
+									  <span></span> </div>
+<!--
+    <div class="styled-input wide wow slideInUp animated animated" data-wow-delay=".5s">
+									  <textarea required></textarea>
+									  <label>Message</label>
+									  <span></span> </div>
+                                      -->
+  <select>
+    <option value="生活">生活</option>
+    <option value="萌宠">萌宠</option>
+    <option value="学习">学习</option>
+    <option value="工作">工作</option>
+    <option value="娱乐">娱乐</option>
+  </select> 
+ 
+  <div> <br/> </div>                                
+                                      
+  <script type="text/javascript">
+    var editor;　　//全局变量
+    KindEditor.ready(function(K) {
+      editor = K.create('#kindedito', {
+      allowImageUpload : false,
+      items : [
+           'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic',
+   　　　　 'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright',
+  　　　　  'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+      });
+    });
+</script>
+
+<script type="text/javascript">
+    function getText(){
+        var text =editor.html();　　　　　　　　　　　　　//获取textarea文本域中的文本
+        var newNode = document.createElement("p");　　//创建一个新结点
+        newNode.innerHTML = text;　　　　　　　　　　　　//用text设置p结点中的文本内容
+        var element = document.getElementById("show");//获取show结点，以show结点为父节点
+        element.append(newNode);　　　　　　　　　　　　　//将新建的结点添加进去，相当于盒子里放盒子一样　　　　　　　　　　　　　
+}
+</script>
+</head>
+ 
+<body>
+
+<script type="text/javascript">
+    var editor;　　//全局变量
+    KindEditor.ready(function(K) {
+      editor = K.create('#kindedito', {
+      allowImageUpload : false,
+      items : [
+           'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic',
+   　　　　 'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright',
+  　　　　  'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+      });
+    });
+</script>
+
+<script type="text/javascript">
+    function getText(){
+        var text =editor.html();　　　　　　　　　　　　　//获取textarea文本域中的文本
+        var newNode = document.createElement("p");　　//创建一个新结点
+        newNode.innerHTML = text;　　　　　　　　　　　　//用text设置p结点中的文本内容
+        var element = document.getElementById("show");//获取show结点，以show结点为父节点
+        element.append(newNode);　　　　　　　　　　　　　//将新建的结点添加进去，相当于盒子里放盒子一样　　　　　　　　　　　　　
+}
+</script>
+</head>
+ 
+<body>
+
+<div id="kindeditor">
+    <textarea id="kindedito" name="post" rows="20" cols="100" ></textarea> 
+</div>
+
+<div id="show">
+</div>
+
+
+
+
+                                      <div class="send wow shake animated animated" data-wow-delay=".5s">
+											<input type="submit" value="Send" >
+										</div>
+    
+  </article>
+  <script src="js/silder.js"></script>
+  <div class="clear"></div>
+  <!-- 清除浮动 --> 
+</div>
+<div class="footer">
+ <p> Design by <a href="/">CS&amp;S Panel3</a></p>
+ <br />
+        <p>湘ICP备11002373号-1</p>
+</div>
+</body>
+</html>
